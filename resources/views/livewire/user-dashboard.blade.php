@@ -2,18 +2,18 @@
     <x-navbar></x-navbar>
 
     <div class="mt-20 max-w-screen-xl mx-auto p-4">
-        <h1 class="text-black dark:text-white capitalize">Hi, welcome back <span class="font-bold">{{ Auth::user()->name }}</span></h1>
+        <h1 class="text-black dark:text-white capitalize">Hi, welcome back <span class="font-bold">{{ Auth::user()->name }}</span> 👋</h1>
     </div>
 
     <div class="max-w-xl mx-auto mt-5 mb-5">
-        <label for="todo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
+        <label for="todo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Add Your Task</label>
         <form action="" wire:submit="addTask" class="flex gap-3">
             <x-input id="todo" name="todo" wire:model="todo" placeholder="Add Task" class="w-[75%]"></x-input>
             <x-button class="w-[25%]">Add Task</x-button>
         </form>
     </div>
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg max-w-xl mx-auto">
+    <div class="relative overflow-x-auto shadow-md dark:shadow-slate-300 sm:rounded-lg max-w-xl mx-auto">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -69,7 +69,9 @@
             </tbody>
         </table>
 
-        {{ $todos->links() }}
+        <div class="p-3">
+            {{ $todos->links() }}
+        </div>
 
     </div>
 
