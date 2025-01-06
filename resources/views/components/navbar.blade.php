@@ -17,7 +17,12 @@
                         fill-rule="evenodd" clip-rule="evenodd"></path>
                 </svg>
             </button>
-            <x-button-link href="{{ route('login') }}">Login</x-button-link>
+            @auth
+                <x-logout>Logout</x-logout>
+            @endauth
+            @guest
+                <x-button-link href="{{ route('login') }}">Login</x-button-link>
+            @endguest
         </div>
     </div>
 </nav>
